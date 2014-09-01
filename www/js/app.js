@@ -1,4 +1,15 @@
-angular.module('echoJs', ['ionic'])
+angular.module('echoJs', ['ionic', 'ui.router'])
+
+.config(['$stateProvider',
+  function($stateProvider) {
+
+    $stateProvider.state('home', {
+      url: '/',
+      templateUrl: 'home.html',
+      controller: 'MainCtrl'
+    });
+
+}])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

@@ -4,12 +4,9 @@
   angular.module('echoJs')
     .controller('MainCtrl', MainCtrl);
 
+  MainCtrl.$inject = ['items'];
+
   function MainCtrl() {
-    this.items = [
-      { id: 1, name: "article 1" },
-      { id: 2, name: "article 2" },
-      { id: 3, name: "article 3" },
-      { id: 3, name: "article 4" }
-    ];
+    this.items = items;
   }
 })();

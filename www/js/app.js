@@ -1,15 +1,21 @@
 angular.module('echoJs', ['ionic', 'ui.router'])
 
-.config(['$stateProvider',
-  function($stateProvider) {
+.config(function($stateProvider) {
 
+    console.log('what the fuck config');
     $stateProvider.state('home', {
       url: '/',
       templateUrl: 'home.html',
-      controller: 'MainCtrl'
-    });
+      controller: 'MainCtrl',
+      resolve: {
+        items: function($http) {
+          console.log('what the fuck resolve');
+          return $http.get('http://www.github.com');
+        }
+      }
+    })
 
-}])
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

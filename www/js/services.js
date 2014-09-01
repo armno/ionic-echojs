@@ -6,6 +6,8 @@
 
   Feed.$inject = ['$http'];
 
+  console.log('what the fuck service');
+
   function Feed($http) {
     var feed = {
       getRss: getRss
